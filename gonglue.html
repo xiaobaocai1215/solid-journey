@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回忆天龙专属 - 完整版福利攻略</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", "SimHei", sans-serif;
+        }
+
+        /* 页面整体容器 */
+        .page-wrapper {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* 上部背景区域（新增中间留白） */
+        .upper-section {
+            background-image: url("https://i0.cy.com/xtl/pic/2024/10/30/erg/1920%C3%971200.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 3rem 0;
+            position: relative;
+            /* 中间留白：通过伪元素在背景层添加透明条 */
+        }
+        .upper-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0.6) 30%,
+                rgba(0, 0, 0, 0) 40%,
+                rgba(0, 0, 0, 0) 60%,
+                rgba(0, 0, 0, 0.6) 70%,
+                rgba(0, 0, 0, 0.6) 100%
+            );
+            z-index: 1;
+        }
+
+        /* 下部背景区域（新增中间留白） */
+        .lower-section {
+            background-image: url("https://i0.cy.com/xtl/pic/2024/10/30/ergNv/1920%C3%971200.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 3rem 0;
+            position: relative;
+        }
+        .lower-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.65) 0%,
+                rgba(0, 0, 0, 0.65) 30%,
+                rgba(0, 0, 0, 0) 40%,
+                rgba(0, 0, 0, 0) 60%,
+                rgba(0, 0, 0, 0.65) 70%,
+                rgba(0, 0, 0, 0.65) 100%
+            );
+            z-index: 1;
+        }
+
+        /* 底部新增图片区域 */
+        .bottom-img-section {
+            background-color: #0c1221;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .bottom-img {
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 8px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* 内容卡片（半透明悬浮效果） */
+        .content-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(12, 18, 33, 0.88);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        /* 导航栏样式 */
+        .nav-menu {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+        .nav-menu a {
+            color: #ffd700;
+            text-decoration: none;
+            padding: 0.7rem 1.4rem;
+            background: rgba(30, 41, 59, 0.85);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        .nav-menu a:hover {
+            background: #ffd700;
+            color: #0c1221;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+        }
+
+        /* 标题样式 */
+        .main-title {
+            color: #ffd700;
+            font-size: 1.8rem;
+            margin-bottom: 1.8rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            align-items: center;
+        }
+        .main-title::before {
+            content: "🎯";
+            margin-right: 1rem;
+        }
+
+        .sub-title {
+            color: #87ceeb;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .sub-title::before {
+            content: "🔹";
+            margin-right: 0.8rem;
+        }
+
+        .mini-title {
+            color: #f0e68c;
+            font-size: 1.1rem;
+            margin: 1.2rem 0 0.8rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid #ffd700;
+        }
+
+        /* 列表样式 */
+        ul {
+            list-style: none;
+            padding-left: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        ul li {
+            color: #e6e6fa;
+            margin-bottom: 0.9rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.7;
+        }
+        ul li::before {
+            content: "★";
+            color: #ffd700;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.9rem;
+        }
+
+        /* 重点内容高亮 */
+        .highlight {
+            color: #ff6347;
+            font-weight: 700;
+            text-shadow: 0 0 3px rgba(255, 99, 71, 0.3);
+        }
+        .gold-highlight {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        /* 图片展示区 */
+        .image-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            justify-content: center;
+        }
+        .福利-image {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .福利-image:hover {
+            transform: scale(1.04);
+        }
+        .image-desc {
+            text-align: center;
+            color: #b0c4de;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* 表格样式（宝石搭配） */
+        .gem-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: rgba(30, 41, 59, 0.6);
+        }
+        .gem-table th, .gem-table td {
+            padding: 1rem;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            text-align: left;
+            color: #e6e6fa;
+        }
+        .gem-table th {
+            background: rgba(30, 41, 59, 0.8);
+            color: #ffd700;
+            font-weight: 600;
+        }
+        .gem-table tr:nth-child(even) {
+            background: rgba(30, 41, 59, 0.4);
+        }
+
+        /* BOSS/副本标签 */
+        .boss-tag {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            background: rgba(135, 206, 235, 0.2);
+            color: #87ceeb;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 992px) {
+            .content-container {
+                padding: 1.8rem;
+                margin: 0 1.2rem;
+            }
+            .nav-menu {
+                margin: 0 1.2rem 2rem;
+            }
+            .main-title {
+                font-size: 1.6rem;
+            }
+            .sub-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 1.5rem;
+            }
+            .nav-menu a {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+            .main-title {
+                font-size: 1.4rem;
+            }
+            .gem-table th, .gem-table td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .upper-section, .lower-section {
+                padding: 2rem 0;
+            }
+            .content-container {
+                padding: 1.2rem;
+                margin: 0 0.8rem;
+            }
+            .nav-menu {
+                gap: 0.5rem;
+            }
+            .福利-image {
+                max-width: 100%;
+            }
+            .bottom-img {
+                margin: 0 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- 上部背景区域 -->
+        <div class="upper-section">
+            <!-- 导航菜单 -->
+            <div class="nav-menu">
+                <a href="#game-welfare">游戏福利</a>
+                <a href="#passive挂机">激情挂机</a>
+                <a href="#feature-play">特色玩法</a>
+                <a href="#must-boss">必刷BOSS</a>
+                <a href="#must-copy">必刷副本</a>
+                <a href="#build-guide">打造指南</a>
+                <a href="#other-guide">其他指南</a>
+            </div>
+
+            <!-- 内容容器 -->
+            <div class="content-container">
+                <!-- 游戏福利相关 -->
+                <div id="game-welfare">
+                    <h2 class="main-title">一、游戏福利相关</h2>
+                    <ul>
+                        <li>上线赠送 <span class="highlight">50000YB+绑元+交子</span>，助力新手起步更轻松（达到30级可以点击小地图右边开启自动挂机）</li>
+                    </ul>
+
+                    <!-- 福利图片展示 -->
+                    <div class="image-group">
+                        <img src="https://i0.cy.com/xtl/pic/2024/10/30/erg/1920%C3%971200.jpg" alt="一掷千金" class="福利-image">
+                        <img src="https://i0.cy.com/xtl/pic/2024/10/30/erg/1920%C3%971200.jpg" alt="游戏福利" class="福利-image">
+                    </div>
+                    <p class="image-desc">游戏福利示意图（实际以游戏内为准）</p>
+
+                    <h3 class="sub-title">新增游戏免费染色</h3>
+                    <ul>
+                        <li>兽魂绘色、染色、骨翼、穷奇神兽魂</li>
+                    </ul>
+                </div>
+
+                <!-- 激情挂机 -->
+                <div id="passive挂机">
+                    <h2 class="main-title">二、激情挂机 ★★★★★★</h2>
+                    <h3 class="sub-title">激情挂机</h3>
+                    <ul>
+                        <li>每天晚上19:00开启60分钟激情挂机每30获取500非绑定，</li>
+                    </ul>
+
+                    <h3 class="sub-title">2. 圣兽山BOSS</h3>
+                    <ul>
+                        <li>二小时一次刷新BOSS，掉落超级宝石合成符、重楼伤、重楼泪（可兑换重楼）</li>
+                    </ul>
+
+                    <h3 class="sub-title">3. 束河BOSS</h3>
+                    <ul>
+                        <li>二小时一次刷新BOSS，掉落高级宝石合成符、重楼伤、重楼泪（可兑换重楼）</li>
+                    </ul>
+                </div>
+
+                <!-- 特色玩法 -->
+                <div id="feature-play">
+                    <h2 class="main-title">三、特色玩法</h2>
+                    <ul>
+                        <li>重楼、兔耳朵玩法和套装玩法，可在洛阳校场梁师成处参与</li>
+                    </ul>
+
+                    <h3 class="sub-title">1. 重楼玩法</h3>
+                    <ul>
+                        <li>小时BOSS刷出的重楼茫、重楼泪，可兑换重楼玉、重楼戒（<span class="gold-highlight">255个材料兑换一件重楼装备</span>）；多余重楼可以分解为魔尊魂武</li>
+                    </ul>
+
+                    <h3 class="sub-title">2. 兔耳朵玩法</h3>
+                    <ul>
+                        <li>兔耳朵升级路线：50级→60级→70级→80级→90级→100级（<span class="gold-highlight">255个萝卜升一级</span>）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下部背景区域 -->
+        <div class="lower-section">
+            <!-- 内容容器 -->
+            <div class="content-container">
+                <!-- 必刷BOSS -->
+                <div id="must-boss">
+                    <h2 class="main-title">四、必刷BOSS</h2>
+
+                    <h3 class="sub-title">【地图场景】</h3>
+                    <ul>
+                        <li>体力雕文、精绘雕纹图样、高级合成符、幻魂残片、兽魂魂玉、武道玄元丹、玄兵石、记忆碎片、魔尊魂武、天龙八部纪念卡（抽奖）、充值点卷、声望点卷</li>
+                    </ul>
+
+                    <h3 class="sub-title">【世界初级BOSS】</h3>
+                    <ul>
+                        <li>15朵玫瑰、绑定元宝、武道玄元丹、玄兵石、记忆碎片、充值点卷、声望点卷、魔尊魂武（渺小几率）</li>
+                    </ul>
+
+                    <h3 class="sub-title">【世界中的BOSS】</h3>
+                    <ul>
+                        <li>15朵玫瑰、绑定元宝、武道玄元丹、玄兵石、记忆碎片、充值点卷、声望点卷、高级合成宝石、天龙八部纪念卡（抽奖）、魔尊魂武（概率）</li>
+                    </ul>
+
+                    <h3 class="sub-title">【世界高级BOSS】</h3>
+                    <ul>
+                        <li>15朵玫瑰、绑定元宝、武道玄元丹、玄兵石、记忆碎片、充值点卷、声望点卷、高级合成宝石、天龙八部纪念卡（抽奖）、魔尊魂武（概率）、超级宝石合成符（概率）</li>
+                    </ul>
+
+                    <h3 class="sub-title">【世界终极BOSS】</h3>
+                    <ul>
+                        <li>15朵玫瑰、绑定元宝、武道玄元丹、玄兵石、记忆碎片、充值点卷、声望点卷、高级合成宝石、天龙八部纪念卡（抽奖）、魔尊魂武（概率）、超级宝石合成符（概率）、重楼茫/重楼泪（概率）、重楼套系列（概率）、掉落 <span class="highlight">重楼项链（区内唯一产出）</span></li>
+                    </ul>
+
+                    <h3 class="sub-title">其他BOSS掉落</h3>
+                    <ul>
+                        <li><span class="boss-tag">门派BOSS</span>：15朵玫瑰、玄兵石、记忆碎片、圣兽鳞、胡萝卜</li>
+                        <li><span class="boss-tag">镜湖小龙</span>：属性雕纹、精绘雕纹图样、绘金尘、幻魂残片、武道丹、高级宝石合成符、神兵符、绑定YB</li>
+                        <li><span class="boss-tag">束河霜影</span>：幻魂残片、兽魂魂玉、重楼一系列、充值点卷、声望点卷、15朵玫瑰、绑定YB、功力丹</li>
+                        <li><span class="boss-tag">企鹅王</span>：15朵玫瑰、高级熔炼符、高级合成符、新莽神符、绑定YB</li>
+                        <li><span class="boss-tag">圣兽山龙龟</span>：兽魂魂玉、高级宝石合成符、饰品体力、饰品身法、下限、圣兽鳞、绑定YB</li>
+                        <li><span class="boss-tag">圣兽山野猪</span>：圣兽鳞、功力丹、声望卷、珍兽技能书、远古大群、15朵玫瑰、绑定YB</li>
+                        <li><span class="boss-tag">圣兽山宝箱</span>：随机四下限，活动时间3:15、10:15、13:15、18:15、23:30</li>
+                        <li><span class="boss-tag">秦皇地宫4层</span>：功力丹、灵魂碎片、金蚕丝、灵蚕丝、胡萝卜</li>
+                        <li><span class="boss-tag">夺宝马贼</span>：胡萝卜、珍兽技能书、神亦石、残篇、魂玉、声望点卷、15朵玫瑰、绑定YB、金蚕丝、灵蚕丝</li>
+                        <li><span class="boss-tag">古墓BOSS</span>：金蚕丝、高级宝石合成符、15朵玫瑰、绑定YB</li>
+                        <li><span class="boss-tag">各大九十图怪物</span>：均大量爆金蚕丝</li>
+                    </ul>
+                </div>
+
+                <!-- 必刷副本 -->
+                <div id="must-copy">
+                    <h2 class="main-title">五、必刷副本</h2>
+                    <ul>
+                        <li><span class="boss-tag">缥缈峰</span>：残缺神节7级、玄天寒玉、缥缈玄符、忘无石、润魂石、胡萝卜</li>
+                        <li><span class="boss-tag">燕子坞</span>：寒冰星屑、新莽神符、神兵符3级、落马箭、胡萝卜</li>
+                        <li><span class="boss-tag">老三环</span>：黄纸、琉璃焰/御瑶盘、新莽神符、武道丹、玄兵石、胡萝卜</li>
+                        <li><span class="boss-tag">新三环</span>：琉璃焰/御瑶盘、玄昊玉、新莽神符、回天神石、玄兵石、胡萝卜</li>
+                        <li><span class="boss-tag">藏经阁</span>：武魂经验碎片、80门派技能、饰品、身法体力雕文图样、精绘图样、灵蚕丝、功力丹、胡萝卜</li>
+                        <li><span class="boss-tag">造反恶贼</span>：武魂经验碎片、幻魂残片、神兵符3级、掌柜要诀、胡萝卜</li>
+                        <li><span class="boss-tag">大理杀星</span>：圣兽鳞、功力丹、75珍兽套装、胡萝卜</li>
+                        <li><span class="boss-tag">门派宵小</span>：门派技能书、武魂下限、武魂属性书、武魂减抗书、武魂经验碎片、体力雕文、属性雕文、虹曜石、15朵玫瑰、胡萝卜</li>
+                        <li><span class="boss-tag">水月山庄</span>：幻魂残片、绘金尘、武道丹、金蚕丝、胡萝卜</li>
+                        <li><span class="boss-tag">青丘副本</span>：幻魂残片、绘金尘、绘金砂、绘金石、高级淬魂髓、兽魂魂玉、胡萝卜</li>
+                    </ul>
+                </div>
+
+                <!-- 打造指南 -->
+                <div id="build-guide">
+                    <h2 class="main-title">六、打造指南</h2>
+
+                    <h3 class="sub-title">普通神器暗器</h3>
+                    <ul>
+                        <li><strong>梅花镖</strong>：新三副本掉落玄昊玉（小怪也掉），50个材料在洛阳118.184坐标立繁处兑换</li>
+                        <li><strong>冰魄神针</strong>：燕子坞产出寒冰星屑20个，材料在楼兰133.117钱宏宇处兑换寒冰星石升级冰魄神针</li>
+                        <li><strong>102神器</strong>：
+                            <ul>
+                                <li>需要神节7级+F7，神节完成神器任务</li>
+                                <li>缥缈峰李秋水掉落残缺神节7级（也可以用神节碎片合成），然后使用20个莽神符7级</li>
+                                <li>到缥缈门口买个图样，到苏州铁匠边上学习铸造，进行打造</li>
+                                <li>神器需先打孔再升星，可先炼魂，然后再用升星石升至9星</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3 class="sub-title">武魂打造</h3>
+                    <ul>
+                        <li>武魂最高合成等级7级（共需要64个武魂，依次类推6级需要32个武魂、5级需要16个武魂）</li>
+                        <li>扩展属性最高为7条（开辟扩展属性在商店购买道具破天箭）</li>
+                        <li>扩展类技能书通过门派宵小产出（减抗、抗性、攻击、下限）</li>
+                    </ul>
+
+                    <h4 class="mini-title">武魂幻魂</h4>
+                    <ul>
+                        <li>乾位填入：增加角色属性或者内外功伤害</li>
+                        <li>坤位填入：减少角色属性或内外功伤害</li>
+                        <li>九幽鸩鼎残片：增加或减少毒属性攻击与防御（根据位置）</li>
+                        <li>玄莲道影残片：增加或减少玄属性攻击与防御（根据位置）</li>
+                        <li>凤舞沙华残片：增加或减少火属性攻击与防御（根据位置）</li>
+                        <li>沧海游鳞残片：增加或减少冰属性攻击与防御（根据位置）</li>
+                        <li>琉璃金盏：外功攻击</li>
+                        <li>灵肌瑶盘：内功攻击</li>
+                        <li>注意：幻魂残篇每天只可升级100次</li>
+                    </ul>
+
+                    <h3 class="sub-title">雕纹升级</h3>
+                    <ul>
+                        <li>四大场景、藏经阁、镜湖小龙均产出各种雕纹</li>
+                        <li>黄纸产出在三环和地摊摆摊</li>
+                        <li>丹青和雕纹蚀刻溶济在元宝商店购买</li>
+                        <li>升级方式同步官方，精绘玩法详见雕纹旁边NPC</li>
+                    </ul>
+
+                    <h3 class="sub-title">兽魂打造</h3>
+                    <ul>
+                        <li>附体青龙兽魂：增加冰属性攻击以及减抗</li>
+                        <li>附体玄武兽魂：增加毒属性攻击以及减抗</li>
+                        <li>附体白虎兽魂：增加玄属性攻击以及减抗</li>
+                        <li>附体朱雀兽魂：增加火属性攻击以及减抗</li>
+                        <li>神兽魂合成需40个魂玉（冰=青龙、玄=白虎、火=朱雀、毒=玄武）</li>
+                        <li>合成之后，可用以上四种升级魂境值，最高可升到6阶，每提升一阶多一条属性生效</li>
+                        <li>到珍兽商城买高级粹魂髓和升魂丹升级可升到100级：高级淬魂用来洗练需要的属性，洗到合适的锁定（颜色无关），洗够一万次后可锁定六条；洗炼的NPC可领锁魂符·绝，六条属性满意后用上锁灵符统一洗色即可</li>
+                        <li>兽魂获取：每日青丘副本、龙龟、龙牌、束河霜影</li>
+                        <li>大理神秘商店每天可刷新购买神魂檀箱100个，里面包含各种魂玉</li>
+                    </ul>
+
+                    <h3 class="sub-title">宝石打造</h3>
+                    <table class="gem-table">
+                        <tr>
+                            <<th>装备部位</</th>
+                            <<th>宝石搭配方案</</th>
+                        </tr>
+                        <tr>
+                            <td>帽子、衣服、手套、鞋子、腰带、护肩</td>
+                            <td>体力、闪避、抗、四孔（身法或者抗）</td>
+                        </tr>
+                        <tr>
+                            <td>戒指、护符、护腕、武器</td>
+                            <td>属性、命中/会心/内外、减抗、四孔（属性或者减抗）</td>
+                        </tr>
+                        <tr>
+                            <td>项链、暗器、副武器、武魂</td>
+                            <td>体力、属性、减抗/抗、四孔（属性或者减抗）</td>
+                        </tr>
+                    </table>
+
+                    <h3 class="sub-title">手工制作</h3>
+                    <ul>
+                        <li>学习地点：苏州铁匠铺朱峰（269 150）学习三精</li>
+                        <li>材料获取：棉布秘银可通过充值回馈、神秘商店购买3级和4级棉布秘银</li>
+                    </ul>
+                </div>
+
+                <!-- 其他指南 -->
+                <div id="other-guide">
+                    <h2 class="main-title">七、其他指南</h2>
+                    <ul>
+                        <li>物品兑换：洛阳校场龚彩云处</li>
+                        <li>游戏回馈：上线即可领取无限绑元，随意造</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部新增图片区域 -->
+        <div class="bottom-img-section">
+            <img src="https://i0.cy.com/xtl/pic/2024/10/30/erg/1920%C3%971200.jpg" alt="游戏底部宣传图" class="bottom-img">
+        </div>
+    </div>
+
+    <!-- 平滑滚动脚本 -->
+    <script>
+        // 导航栏平滑滚动
+        document.querySelectorAll('.nav-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 120;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 页面加载时滚动到顶部
+        window.addEventListener('load', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
